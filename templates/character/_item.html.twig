@@ -1,0 +1,22 @@
+<article class="character">
+    <img class="character-picture" src="{{ character.picture }}" />
+
+    <h2>
+        <a href="{{ path('character_edit', {id: character.id}) }}">
+            {{ character.name }}
+        </a>
+    </h2>
+
+    <p class="character-data">
+        <span class="data">Mass: {{ character.mass }}</span>
+        <span class="data">Height: {{ character.height }}</span>
+        <span class="data">Gender: {{ character.gender }}</span>
+    </p>
+
+    <form action="{{ url('character_delete', {id: character.id}) }}" method="post" data-confirmation="true" id="delete-form">
+        <button type="submit" class="btn btn-block btn-danger">
+            Delete
+        </button>
+    </form>
+
+</article>
